@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            font-size: 20px;
+            font-family: Arial;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            border: 5px solid #333;
+            box-sizing: border-box;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+  
+
+        .header {
+            background-color: blueviolet;
+            height: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .right-content {
+            float: left;
+            width: 50%;
+            /* background-color: #000; */
+            /* border: 1px solid black; */
+        }
+
+
+        .aside {
+            /* float: left; */
+            background-color: lightgreen;
+            height: 4em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav {
+            /* float: left; */
+            background-color: skyblue;
+            height: 6em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu {
+            float: right;
+            width: 50%;
+            background-color: orange;
+            height: 10em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer {
+            background-color: lightcoral;
+            height: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="right-content">
+                <div class="aside">Aside</div>
+                <div class="nav">Nav</div>
+            </div>
+            <div class="menu">Menu</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+
+</html>
