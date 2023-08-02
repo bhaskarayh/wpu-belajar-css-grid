@@ -1,0 +1,67 @@
+<!-- grid-template area -->
+<!-- Mendefinisikan grid template menggunakan nama dari area yang ditulis pada property grid-area pada item -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | Grid Gap</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ddd;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #f3f3f3
+        }
+
+        .container {
+            width: 90%;
+            margin: 50px auto;
+            display: grid;
+            /* Meendefinisikan ukuran grid-line / jarak antara baris atau kolom */
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-rows: repeat(3, 1fr); */
+            /* column-gap: 10px;
+            row-gap: 10px; */
+            gap:10px;
+            border:10px orange solid;
+            border-radius:20px;
+        }
+
+        .item {
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+            /* border: 0.5px solid black; */
+        }
+
+        /* Item genap (even) */
+        .item:nth-child(even) {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+</body>
+
+</html>

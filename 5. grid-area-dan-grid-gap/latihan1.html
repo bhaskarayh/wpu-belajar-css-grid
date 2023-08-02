@@ -1,0 +1,97 @@
+<!-- grid-template area -->
+<!-- Mendefinisikan grid template menggunakan nama dari area yang ditulis pada property grid-area pada item -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | Grid Template Area</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ddd;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #f3f3f3
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            display: grid;
+            /* grid-template area */
+            /* Mendefinisikan grid template menggunakan nama dari area yang ditulis pada property grid-area pada item */
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                'header header header'
+                'sidebar sidebar sidebar'
+                'content content content'
+                'footer footer footer';
+        }
+
+        .item {
+            background-color: rgb(37, 172, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+            /* border: 0.5px solid black; */
+        }
+
+
+        .header {
+            grid-area: header;
+            background-color: rgb(64, 207, 254);
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(8, 142, 60);
+        }
+
+        .content {
+            grid-area: content;
+            background-color: rgb(140, 26, 26);
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: rgb(69, 69, 69);
+        }
+
+        /* Responsive Breakpoint */
+        /* Mobile */
+        @media screen and (min-width: 576px) {
+            .container {
+                grid-template-areas:
+                    'header header header'
+                    'sidebar content content'
+                    'sidebar content content'
+                    'footer footer footer';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item header">Header</div>
+        <div class="item sidebar">sidebar</div>
+        <div class="item content">content</div>
+        <div class="item footer">footer</div>
+        <!-- <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div> -->
+
+
+    </div>
+</body>
+
+</html>
