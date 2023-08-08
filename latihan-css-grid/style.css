@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: #ddd;
+  font-size: 18px;
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  margin: 18px;
+}
+
+/* Container */
+.container {
+  display: grid;
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-areas:
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 300px;
+  background-image: url(./img/hoodie.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.hero>* {
+  display: none;
+}
+
+.features {
+  background-color: #000;
+  color: #fff;
+  display: grid;
+  place-content: center;
+  /*Justify Align*/
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature-1 {
+  grid-area: feature-1;
+  background-image: url(./img/hoodie-1.jpg);
+  background-size: cover;
+}
+
+.feature-2 {
+  grid-area: feature-2;
+  background-image: url(./img/t-shirt.jpg);
+  background-size: cover;
+}
+
+.features .price {
+  font-size: 3em;
+  font-weight: 200;
+}
+
+
+/* Navigation */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.menu .brand {
+  font-size: 1.3em;
+  color: #333;
+}
+
+.menu-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.menu a {
+  display: block;
+  background-color: #333;
+  text-decoration: none;
+  color: #f3f3f3;
+  text-align: center;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  display: none;
+  z-index: 999;
+}
+
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 1s;
+}
+
+/* Services */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px
+}
+
+.service {
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.service .icon {
+  font-size: 3em;
+}
+
+.service h3 {
+  font: 2em;
+}
+
+.service p {
+  font-weight: 200;
+  font: 0.8em;
+}
+
+/* About */
+.about {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  text-align: center;
+  gap:20px;
+}
+
+.about p {
+  /* font-weight: 200; */
+  /* font: 0.; */
+  font-family: Arial;
+}
+
+
+/* Gallery */
+.gallery {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  background-size: cover;
+}
+
+.gallery h2 {
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+  grid-column: 1/ -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery img {
+  border-radius: 5px;
+}
+
+/* Responsive Breakpoint */
+@media screen and (max-width: 1024px) {
+
+  .container {
+    width: 100%;
+  }
+
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+
+  .menu .brand {
+    display: none;
+  }
+
+  .hero>* {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 768px) {}
+
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+  body {
+    margin: 15px
+  }
+
+  .header {
+    grid-template-areas:
+      'hero'
+      'feature-1'
+      'feature-2';
+  }
+
+
+  .menu-list {
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    align-items: center;
+    background-color: #333;
+    z-index: -1;
+    width: 100%;
+    transform: translateY(-100%);
+  }
+
+  .menu-list {
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  .slide {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .menu {
+    order: -1;
+  }
+
+  .menu .brand {
+    display: none;
+  }
+
+  /* Menu Toggle */
+  .menu-toggle {
+
+    justify-self: end;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+}
